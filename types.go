@@ -11,79 +11,308 @@ import (
 
 // trade pairs constants
 const (
-	ADACAD   = "ADACAD"
-	ADAETH   = "ADAETH"
-	ADAEUR   = "ADAEUR"
-	ADAUSD   = "ADAUSD"
-	ADAXBT   = "ADAXBT"
-	AAVEUSD  = "AAVEUSD"
-	BCHEUR   = "BCHEUR"
-	BCHUSD   = "BCHUSD"
-	BCHXBT   = "BCHXBT"
-	DASHEUR  = "DASHEUR"
-	DASHUSD  = "DASHUSD"
-	DASHXBT  = "DASHXBT"
-	EOSETH   = "EOSETH"
-	EOSEUR   = "EOSEUR"
-	EOSUSD   = "EOSUSD"
-	EOSXBT   = "EOSXBT"
-	GNOETH   = "GNOETH"
-	GNOEUR   = "GNOEUR"
-	GNOUSD   = "GNOUSD"
-	GNOXBT   = "GNOXBT"
-	QTUMCAD  = "QTUMCAD"
-	QTUMETH  = "QTUMETH"
-	QTUMEUR  = "QTUMEUR"
-	QTUMUSD  = "QTUMUSD"
-	QTUMXBT  = "QTUMXBT"
-	USDTZUSD = "USDTZUSD"
-	XBTUSDT  = "XBTUSDT"
-	XETCXETH = "XETCXETH"
-	XETCXXBT = "XETCXXBT"
-	XETCZEUR = "XETCZEUR"
-	XETCZUSD = "XETCZUSD"
-	XETHXXBT = "XETHXXBT"
-	XETHZCAD = "XETHZCAD"
-	XETHZEUR = "XETHZEUR"
-	XETHZGBP = "XETHZGBP"
-	XETHZJPY = "XETHZJPY"
-	XETHZUSD = "XETHZUSD"
-	XICNXETH = "XICNXETH"
-	XICNXXBT = "XICNXXBT"
-	XLTCXXBT = "XLTCXXBT"
-	XLTCZEUR = "XLTCZEUR"
-	XLTCZUSD = "XLTCZUSD"
-	XMLNXETH = "XMLNXETH"
-	XMLNXXBT = "XMLNXXBT"
-	XREPXETH = "XREPXETH"
-	XREPXXBT = "XREPXXBT"
-	XREPZEUR = "XREPZEUR"
-	XREPZUSD = "XREPZUSD"
-	XTZCAD   = "XTZCAD"
-	XTZETH   = "XTZETH"
-	XTZEUR   = "XTZEUR"
-	XTZUSD   = "XTZUSD"
-	XTZXBT   = "XTZXBT"
-	XXBTZCAD = "XXBTZCAD"
-	XXBTZEUR = "XXBTZEUR"
-	XXBTZGBP = "XXBTZGBP"
-	XXBTZJPY = "XXBTZJPY"
-	XXBTZUSD = "XXBTZUSD"
-	XXDGXXBT = "XXDGXXBT"
-	XXLMXXBT = "XXLMXXBT"
-	XXLMZEUR = "XXLMZEUR"
-	XXLMZUSD = "XXLMZUSD"
-	XXMRXXBT = "XXMRXXBT"
-	XXMRZEUR = "XXMRZEUR"
-	XXMRZUSD = "XXMRZUSD"
-	XXRPXXBT = "XXRPXXBT"
-	XXRPZCAD = "XXRPZCAD"
-	XXRPZEUR = "XXRPZEUR"
-	XXRPZJPY = "XXRPZJPY"
-	XXRPZUSD = "XXRPZUSD"
-	XZECXXBT = "XZECXXBT"
-	XZECZEUR = "XZECZEUR"
-	XZECZUSD = "XZECZUSD"
+	AAVEAUD   = "AAVEAUD"
+	AAVEETH   = "AAVEETH"
+	AAVEEUR   = "AAVEEUR"
+	AAVEGBP   = "AAVEGBP"
+	AAVEUSD   = "AAVEUSD"
+	AAVEXBT   = "AAVEXBT"
+	ADAAUD    = "ADAAUD"
+	ADAETH    = "ADAETH"
+	ADAEUR    = "ADAEUR"
+	ADAGBP    = "ADAGBP"
+	ADAUSD    = "ADAUSD"
+	ADAUSDT   = "ADAUSDT"
+	ADAXBT    = "ADAXBT"
+	ALGOETH   = "ALGOETH"
+	ALGOEUR   = "ALGOEUR"
+	ALGOGBP   = "ALGOGBP"
+	ALGOUSD   = "ALGOUSD"
+	ALGOXBT   = "ALGOXBT"
+	ANTETH    = "ANTETH"
+	ANTEUR    = "ANTEUR"
+	ANTUSD    = "ANTUSD"
+	ANTXBT    = "ANTXBT"
+	ATOMAUD   = "ATOMAUD"
+	ATOMETH   = "ATOMETH"
+	ATOMEUR   = "ATOMEUR"
+	ATOMGBP   = "ATOMGBP"
+	ATOMUSD   = "ATOMUSD"
+	ATOMXBT   = "ATOMXBT"
+	AUDJPY    = "AUDJPY"
+	AUDUSD    = "AUDUSD"
+	BALETH    = "BALETH"
+	BALEUR    = "BALEUR"
+	BALUSD    = "BALUSD"
+	BALXBT    = "BALXBT"
+	BATETH    = "BATETH"
+	BATEUR    = "BATEUR"
+	BATUSD    = "BATUSD"
+	BATXBT    = "BATXBT"
+	BCHAUD    = "BCHAUD"
+	BCHETH    = "BCHETH"
+	BCHEUR    = "BCHEUR"
+	BCHGBP    = "BCHGBP"
+	BCHJPY    = "BCHJPY"
+	BCHUSD    = "BCHUSD"
+	BCHUSDT   = "BCHUSDT"
+	BCHXBT    = "BCHXBT"
+	COMPETH   = "COMPETH"
+	COMPEUR   = "COMPEUR"
+	COMPUSD   = "COMPUSD"
+	COMPXBT   = "COMPXBT"
+	CRVETH    = "CRVETH"
+	CRVEUR    = "CRVEUR"
+	CRVUSD    = "CRVUSD"
+	CRVXBT    = "CRVXBT"
+	DAIEUR    = "DAIEUR"
+	DAIUSD    = "DAIUSD"
+	DAIUSDT   = "DAIUSDT"
+	DASHEUR   = "DASHEUR"
+	DASHUSD   = "DASHUSD"
+	DASHXBT   = "DASHXBT"
+	DOTAUD    = "DOTAUD"
+	DOTETH    = "DOTETH"
+	DOTEUR    = "DOTEUR"
+	DOTGBP    = "DOTGBP"
+	DOTUSD    = "DOTUSD"
+	DOTUSDT   = "DOTUSDT"
+	DOTXBT    = "DOTXBT"
+	EOSETH    = "EOSETH"
+	EOSEUR    = "EOSEUR"
+	EOSUSD    = "EOSUSD"
+	EOSUSDT   = "EOSUSDT"
+	EOSXBT    = "EOSXBT"
+	ETH2SETH  = "ETH2SETH"
+	ETHAUD    = "ETHAUD"
+	ETHCHF    = "ETHCHF"
+	ETHDAI    = "ETHDAI"
+	ETHUSDC   = "ETHUSDC"
+	ETHUSDT   = "ETHUSDT"
+	EURAUD    = "EURAUD"
+	EURCAD    = "EURCAD"
+	EURCHF    = "EURCHF"
+	EURGBP    = "EURGBP"
+	EURJPY    = "EURJPY"
+	EWTEUR    = "EWTEUR"
+	EWTGBP    = "EWTGBP"
+	EWTUSD    = "EWTUSD"
+	EWTXBT    = "EWTXBT"
+	FILAUD    = "FILAUD"
+	FILETH    = "FILETH"
+	FILEUR    = "FILEUR"
+	FILGBP    = "FILGBP"
+	FILUSD    = "FILUSD"
+	FILXBT    = "FILXBT"
+	FLOWETH   = "FLOWETH"
+	FLOWEUR   = "FLOWEUR"
+	FLOWGBP   = "FLOWGBP"
+	FLOWUSD   = "FLOWUSD"
+	FLOWXBT   = "FLOWXBT"
+	GNOETH    = "GNOETH"
+	GNOEUR    = "GNOEUR"
+	GNOUSD    = "GNOUSD"
+	GNOXBT    = "GNOXBT"
+	GRTAUD    = "GRTAUD"
+	GRTETH    = "GRTETH"
+	GRTEUR    = "GRTEUR"
+	GRTGBP    = "GRTGBP"
+	GRTUSD    = "GRTUSD"
+	GRTXBT    = "GRTXBT"
+	ICXETH    = "ICXETH"
+	ICXEUR    = "ICXEUR"
+	ICXUSD    = "ICXUSD"
+	ICXXBT    = "ICXXBT"
+	KAVAETH   = "KAVAETH"
+	KAVAEUR   = "KAVAEUR"
+	KAVAUSD   = "KAVAUSD"
+	KAVAXBT   = "KAVAXBT"
+	KEEPETH   = "KEEPETH"
+	KEEPEUR   = "KEEPEUR"
+	KEEPUSD   = "KEEPUSD"
+	KEEPXBT   = "KEEPXBT"
+	KNCETH    = "KNCETH"
+	KNCEUR    = "KNCEUR"
+	KNCUSD    = "KNCUSD"
+	KNCXBT    = "KNCXBT"
+	KSMAUD    = "KSMAUD"
+	KSMETH    = "KSMETH"
+	KSMEUR    = "KSMEUR"
+	KSMGBP    = "KSMGBP"
+	KSMUSD    = "KSMUSD"
+	KSMXBT    = "KSMXBT"
+	LINKAUD   = "LINKAUD"
+	LINKETH   = "LINKETH"
+	LINKEUR   = "LINKEUR"
+	LINKGBP   = "LINKGBP"
+	LINKUSD   = "LINKUSD"
+	LINKUSDT  = "LINKUSDT"
+	LINKXBT   = "LINKXBT"
+	LSKETH    = "LSKETH"
+	LSKEUR    = "LSKEUR"
+	LSKUSD    = "LSKUSD"
+	LSKXBT    = "LSKXBT"
+	LTCAUD    = "LTCAUD"
+	LTCETH    = "LTCETH"
+	LTCGBP    = "LTCGBP"
+	LTCUSDT   = "LTCUSDT"
+	MANAETH   = "MANAETH"
+	MANAEUR   = "MANAEUR"
+	MANAUSD   = "MANAUSD"
+	MANAXBT   = "MANAXBT"
+	NANOETH   = "NANOETH"
+	NANOEUR   = "NANOEUR"
+	NANOUSD   = "NANOUSD"
+	NANOXBT   = "NANOXBT"
+	OCEANEUR  = "OCEANEUR"
+	OCEANGBP  = "OCEANGBP"
+	OCEANUSD  = "OCEANUSD"
+	OCEANXBT  = "OCEANXBT"
+	OMGETH    = "OMGETH"
+	OMGEUR    = "OMGEUR"
+	OMGUSD    = "OMGUSD"
+	OMGXBT    = "OMGXBT"
+	OXTETH    = "OXTETH"
+	OXTEUR    = "OXTEUR"
+	OXTUSD    = "OXTUSD"
+	OXTXBT    = "OXTXBT"
+	PAXGETH   = "PAXGETH"
+	PAXGEUR   = "PAXGEUR"
+	PAXGUSD   = "PAXGUSD"
+	PAXGXBT   = "PAXGXBT"
+	QTUMETH   = "QTUMETH"
+	QTUMEUR   = "QTUMEUR"
+	QTUMUSD   = "QTUMUSD"
+	QTUMXBT   = "QTUMXBT"
+	REPV2ETH  = "REPV2ETH"
+	REPV2EUR  = "REPV2EUR"
+	REPV2USD  = "REPV2USD"
+	REPV2XBT  = "REPV2XBT"
+	SCETH     = "SCETH"
+	SCEUR     = "SCEUR"
+	SCUSD     = "SCUSD"
+	SCXBT     = "SCXBT"
+	SNXAUD    = "SNXAUD"
+	SNXETH    = "SNXETH"
+	SNXEUR    = "SNXEUR"
+	SNXGBP    = "SNXGBP"
+	SNXUSD    = "SNXUSD"
+	SNXXBT    = "SNXXBT"
+	STORJETH  = "STORJETH"
+	STORJEUR  = "STORJEUR"
+	STORJUSD  = "STORJUSD"
+	STORJXBT  = "STORJXBT"
+	TBTCETH   = "TBTCETH"
+	TBTCEUR   = "TBTCEUR"
+	TBTCUSD   = "TBTCUSD"
+	TBTCXBT   = "TBTCXBT"
+	TRXETH    = "TRXETH"
+	TRXEUR    = "TRXEUR"
+	TRXUSD    = "TRXUSD"
+	TRXXBT    = "TRXXBT"
+	UNIETH    = "UNIETH"
+	UNIEUR    = "UNIEUR"
+	UNIUSD    = "UNIUSD"
+	UNIXBT    = "UNIXBT"
+	USDCAUD   = "USDCAUD"
+	USDCEUR   = "USDCEUR"
+	USDCGBP   = "USDCGBP"
+	USDCHF    = "USDCHF"
+	USDCUSD   = "USDCUSD"
+	USDCUSDT  = "USDCUSDT"
+	USDTAUD   = "USDTAUD"
+	USDTCAD   = "USDTCAD"
+	USDTCHF   = "USDTCHF"
+	USDTEUR   = "USDTEUR"
+	USDTGBP   = "USDTGBP"
+	USDTJPY   = "USDTJPY"
+	USDTZUSD  = "USDTZUSD"
+	WAVESETH  = "WAVESETH"
+	WAVESEUR  = "WAVESEUR"
+	WAVESUSD  = "WAVESUSD"
+	WAVESXBT  = "WAVESXBT"
+	XBTAUD    = "XBTAUD"
+	XBTCHF    = "XBTCHF"
+	XBTDAI    = "XBTDAI"
+	XBTUSDC   = "XBTUSDC"
+	XBTUSDT   = "XBTUSDT"
+	XDGEUR    = "XDGEUR"
+	XDGUSD    = "XDGUSD"
+	XETCXETH  = "XETCXETH"
+	XETCXXBT  = "XETCXXBT"
+	XETCZEUR  = "XETCZEUR"
+	XETCZUSD  = "XETCZUSD"
+	XETHXXBT  = "XETHXXBT"
+	XETHXXBTD = "XETHXXBTD"
+	XETHZCAD  = "XETHZCAD"
+	XETHZCADD = "XETHZCADD"
+	XETHZEUR  = "XETHZEUR"
+	XETHZEURD = "XETHZEURD"
+	XETHZGBP  = "XETHZGBP"
+	XETHZGBPD = "XETHZGBPD"
+	XETHZJPY  = "XETHZJPY"
+	XETHZJPYD = "XETHZJPYD"
+	XETHZUSD  = "XETHZUSD"
+	XETHZUSDD = "XETHZUSDD"
+	XLTCXXBT  = "XLTCXXBT"
+	XLTCZEUR  = "XLTCZEUR"
+	XLTCZJPY  = "XLTCZJPY"
+	XLTCZUSD  = "XLTCZUSD"
+	XMLNXETH  = "XMLNXETH"
+	XMLNXXBT  = "XMLNXXBT"
+	XMLNZEUR  = "XMLNZEUR"
+	XMLNZUSD  = "XMLNZUSD"
+	XREPXETH  = "XREPXETH"
+	XREPXXBT  = "XREPXXBT"
+	XREPZEUR  = "XREPZEUR"
+	XREPZUSD  = "XREPZUSD"
+	XRPAUD    = "XRPAUD"
+	XRPETH    = "XRPETH"
+	XRPGBP    = "XRPGBP"
+	XRPUSDT   = "XRPUSDT"
+	XTZAUD    = "XTZAUD"
+	XTZETH    = "XTZETH"
+	XTZEUR    = "XTZEUR"
+	XTZGBP    = "XTZGBP"
+	XTZUSD    = "XTZUSD"
+	XTZXBT    = "XTZXBT"
+	XXBTZCAD  = "XXBTZCAD"
+	XXBTZCADD = "XXBTZCADD"
+	XXBTZEUR  = "XXBTZEUR"
+	XXBTZEURD = "XXBTZEURD"
+	XXBTZGBP  = "XXBTZGBP"
+	XXBTZGBPD = "XXBTZGBPD"
+	XXBTZJPY  = "XXBTZJPY"
+	XXBTZJPYD = "XXBTZJPYD"
+	XXBTZUSD  = "XXBTZUSD"
+	XXBTZUSDD = "XXBTZUSDD"
+	XXDGXXBT  = "XXDGXXBT"
+	XXLMXXBT  = "XXLMXXBT"
+	XXLMZAUD  = "XXLMZAUD"
+	XXLMZEUR  = "XXLMZEUR"
+	XXLMZGBP  = "XXLMZGBP"
+	XXLMZUSD  = "XXLMZUSD"
+	XXMRXXBT  = "XXMRXXBT"
+	XXMRZEUR  = "XXMRZEUR"
+	XXMRZUSD  = "XXMRZUSD"
+	XXRPXXBT  = "XXRPXXBT"
+	XXRPZCAD  = "XXRPZCAD"
+	XXRPZEUR  = "XXRPZEUR"
+	XXRPZJPY  = "XXRPZJPY"
+	XXRPZUSD  = "XXRPZUSD"
+	XZECXXBT  = "XZECXXBT"
+	XZECZEUR  = "XZECZEUR"
+	XZECZUSD  = "XZECZUSD"
+	YFIAUD    = "YFIAUD"
+	YFIETH    = "YFIETH"
+	YFIEUR    = "YFIEUR"
+	YFIGBP    = "YFIGBP"
+	YFIUSD    = "YFIUSD"
+	YFIXBT    = "YFIXBT"
+	ZEURZUSD  = "ZEURZUSD"
+	ZGBPZUSD  = "ZGBPZUSD"
+	ZUSDZCAD  = "ZUSDZCAD"
+	ZUSDZJPY  = "ZUSDZJPY"
 )
 
 // actions constants
@@ -110,84 +339,316 @@ type TimeResponse struct {
 
 // AssetPairsResponse includes asset pair informations
 type AssetPairsResponse struct {
-	ADACAD   AssetPairInfo
-	AAVEUSD  AssetPairInfo
-	ADAETH   AssetPairInfo
-	ADAEUR   AssetPairInfo
-	ADAUSD   AssetPairInfo
-	ADAXBT   AssetPairInfo
-	BCHEUR   AssetPairInfo
-	BCHUSD   AssetPairInfo
-	BCHXBT   AssetPairInfo
-	DASHEUR  AssetPairInfo
-	DASHUSD  AssetPairInfo
-	DASHXBT  AssetPairInfo
-	EOSETH   AssetPairInfo
-	EOSEUR   AssetPairInfo
-	EOSUSD   AssetPairInfo
-	EOSXBT   AssetPairInfo
-	GNOETH   AssetPairInfo
-	GNOEUR   AssetPairInfo
-	GNOUSD   AssetPairInfo
-	GNOXBT   AssetPairInfo
-	QTUMCAD  AssetPairInfo
-	QTUMETH  AssetPairInfo
-	QTUMEUR  AssetPairInfo
-	QTUMUSD  AssetPairInfo
-	QTUMXBT  AssetPairInfo
-	USDTZUSD AssetPairInfo
-	XETCXETH AssetPairInfo
-	XETCXXBT AssetPairInfo
-	XETCZEUR AssetPairInfo
-	XETCZUSD AssetPairInfo
-	XETHXXBT AssetPairInfo
-	XETHZCAD AssetPairInfo
-	XETHZEUR AssetPairInfo
-	XETHZGBP AssetPairInfo
-	XETHZJPY AssetPairInfo
-	XETHZUSD AssetPairInfo
-	XICNXETH AssetPairInfo
-	XICNXXBT AssetPairInfo
-	XLTCXXBT AssetPairInfo
-	XLTCZEUR AssetPairInfo
-	XLTCZUSD AssetPairInfo
-	XMLNXETH AssetPairInfo
-	XMLNXXBT AssetPairInfo
-	XREPXETH AssetPairInfo
-	XREPXXBT AssetPairInfo
-	XREPZEUR AssetPairInfo
-	XREPZUSD AssetPairInfo
-	XTZCAD   AssetPairInfo
-	XTZETH   AssetPairInfo
-	XTZEUR   AssetPairInfo
-	XTZUSD   AssetPairInfo
-	XTZXBT   AssetPairInfo
-	XXBTZCAD AssetPairInfo
-	XXBTZEUR AssetPairInfo
-	XXBTZGBP AssetPairInfo
-	XXBTZJPY AssetPairInfo
-	XXBTZUSD AssetPairInfo
-	XXDGXXBT AssetPairInfo
-	XXLMXXBT AssetPairInfo
-	XXLMZEUR AssetPairInfo
-	XXLMZUSD AssetPairInfo
-	XXMRXXBT AssetPairInfo
-	XXMRZEUR AssetPairInfo
-	XXMRZUSD AssetPairInfo
-	XXRPXXBT AssetPairInfo
-	XXRPZCAD AssetPairInfo
-	XXRPZEUR AssetPairInfo
-	XXRPZJPY AssetPairInfo
-	XXRPZUSD AssetPairInfo
-	XZECXXBT AssetPairInfo
-	XZECZEUR AssetPairInfo
-	XZECZUSD AssetPairInfo
+	AAVEAUD   AssetPairInfo
+	AAVEETH   AssetPairInfo
+	AAVEEUR   AssetPairInfo
+	AAVEGBP   AssetPairInfo
+	AAVEUSD   AssetPairInfo
+	AAVEXBT   AssetPairInfo
+	ADAAUD    AssetPairInfo
+	ADAETH    AssetPairInfo
+	ADAEUR    AssetPairInfo
+	ADAGBP    AssetPairInfo
+	ADAUSD    AssetPairInfo
+	ADAUSDT   AssetPairInfo
+	ADAXBT    AssetPairInfo
+	ALGOETH   AssetPairInfo
+	ALGOEUR   AssetPairInfo
+	ALGOGBP   AssetPairInfo
+	ALGOUSD   AssetPairInfo
+	ALGOXBT   AssetPairInfo
+	ANTETH    AssetPairInfo
+	ANTEUR    AssetPairInfo
+	ANTUSD    AssetPairInfo
+	ANTXBT    AssetPairInfo
+	ATOMAUD   AssetPairInfo
+	ATOMETH   AssetPairInfo
+	ATOMEUR   AssetPairInfo
+	ATOMGBP   AssetPairInfo
+	ATOMUSD   AssetPairInfo
+	ATOMXBT   AssetPairInfo
+	AUDJPY    AssetPairInfo
+	AUDUSD    AssetPairInfo
+	BALETH    AssetPairInfo
+	BALEUR    AssetPairInfo
+	BALUSD    AssetPairInfo
+	BALXBT    AssetPairInfo
+	BATETH    AssetPairInfo
+	BATEUR    AssetPairInfo
+	BATUSD    AssetPairInfo
+	BATXBT    AssetPairInfo
+	BCHAUD    AssetPairInfo
+	BCHETH    AssetPairInfo
+	BCHEUR    AssetPairInfo
+	BCHGBP    AssetPairInfo
+	BCHJPY    AssetPairInfo
+	BCHUSD    AssetPairInfo
+	BCHUSDT   AssetPairInfo
+	BCHXBT    AssetPairInfo
+	COMPETH   AssetPairInfo
+	COMPEUR   AssetPairInfo
+	COMPUSD   AssetPairInfo
+	COMPXBT   AssetPairInfo
+	CRVETH    AssetPairInfo
+	CRVEUR    AssetPairInfo
+	CRVUSD    AssetPairInfo
+	CRVXBT    AssetPairInfo
+	DAIEUR    AssetPairInfo
+	DAIUSD    AssetPairInfo
+	DAIUSDT   AssetPairInfo
+	DASHEUR   AssetPairInfo
+	DASHUSD   AssetPairInfo
+	DASHXBT   AssetPairInfo
+	DOTAUD    AssetPairInfo
+	DOTETH    AssetPairInfo
+	DOTEUR    AssetPairInfo
+	DOTGBP    AssetPairInfo
+	DOTUSD    AssetPairInfo
+	DOTUSDT   AssetPairInfo
+	DOTXBT    AssetPairInfo
+	EOSETH    AssetPairInfo
+	EOSEUR    AssetPairInfo
+	EOSUSD    AssetPairInfo
+	EOSUSDT   AssetPairInfo
+	EOSXBT    AssetPairInfo
+	ETH2SETH  AssetPairInfo
+	ETHAUD    AssetPairInfo
+	ETHCHF    AssetPairInfo
+	ETHDAI    AssetPairInfo
+	ETHUSDC   AssetPairInfo
+	ETHUSDT   AssetPairInfo
+	EURAUD    AssetPairInfo
+	EURCAD    AssetPairInfo
+	EURCHF    AssetPairInfo
+	EURGBP    AssetPairInfo
+	EURJPY    AssetPairInfo
+	EWTEUR    AssetPairInfo
+	EWTGBP    AssetPairInfo
+	EWTUSD    AssetPairInfo
+	EWTXBT    AssetPairInfo
+	FILAUD    AssetPairInfo
+	FILETH    AssetPairInfo
+	FILEUR    AssetPairInfo
+	FILGBP    AssetPairInfo
+	FILUSD    AssetPairInfo
+	FILXBT    AssetPairInfo
+	FLOWETH   AssetPairInfo
+	FLOWEUR   AssetPairInfo
+	FLOWGBP   AssetPairInfo
+	FLOWUSD   AssetPairInfo
+	FLOWXBT   AssetPairInfo
+	GNOETH    AssetPairInfo
+	GNOEUR    AssetPairInfo
+	GNOUSD    AssetPairInfo
+	GNOXBT    AssetPairInfo
+	GRTAUD    AssetPairInfo
+	GRTETH    AssetPairInfo
+	GRTEUR    AssetPairInfo
+	GRTGBP    AssetPairInfo
+	GRTUSD    AssetPairInfo
+	GRTXBT    AssetPairInfo
+	ICXETH    AssetPairInfo
+	ICXEUR    AssetPairInfo
+	ICXUSD    AssetPairInfo
+	ICXXBT    AssetPairInfo
+	KAVAETH   AssetPairInfo
+	KAVAEUR   AssetPairInfo
+	KAVAUSD   AssetPairInfo
+	KAVAXBT   AssetPairInfo
+	KEEPETH   AssetPairInfo
+	KEEPEUR   AssetPairInfo
+	KEEPUSD   AssetPairInfo
+	KEEPXBT   AssetPairInfo
+	KNCETH    AssetPairInfo
+	KNCEUR    AssetPairInfo
+	KNCUSD    AssetPairInfo
+	KNCXBT    AssetPairInfo
+	KSMAUD    AssetPairInfo
+	KSMETH    AssetPairInfo
+	KSMEUR    AssetPairInfo
+	KSMGBP    AssetPairInfo
+	KSMUSD    AssetPairInfo
+	KSMXBT    AssetPairInfo
+	LINKAUD   AssetPairInfo
+	LINKETH   AssetPairInfo
+	LINKEUR   AssetPairInfo
+	LINKGBP   AssetPairInfo
+	LINKUSD   AssetPairInfo
+	LINKUSDT  AssetPairInfo
+	LINKXBT   AssetPairInfo
+	LSKETH    AssetPairInfo
+	LSKEUR    AssetPairInfo
+	LSKUSD    AssetPairInfo
+	LSKXBT    AssetPairInfo
+	LTCAUD    AssetPairInfo
+	LTCETH    AssetPairInfo
+	LTCGBP    AssetPairInfo
+	LTCUSDT   AssetPairInfo
+	MANAETH   AssetPairInfo
+	MANAEUR   AssetPairInfo
+	MANAUSD   AssetPairInfo
+	MANAXBT   AssetPairInfo
+	NANOETH   AssetPairInfo
+	NANOEUR   AssetPairInfo
+	NANOUSD   AssetPairInfo
+	NANOXBT   AssetPairInfo
+	OCEANEUR  AssetPairInfo
+	OCEANGBP  AssetPairInfo
+	OCEANUSD  AssetPairInfo
+	OCEANXBT  AssetPairInfo
+	OMGETH    AssetPairInfo
+	OMGEUR    AssetPairInfo
+	OMGUSD    AssetPairInfo
+	OMGXBT    AssetPairInfo
+	OXTETH    AssetPairInfo
+	OXTEUR    AssetPairInfo
+	OXTUSD    AssetPairInfo
+	OXTXBT    AssetPairInfo
+	PAXGETH   AssetPairInfo
+	PAXGEUR   AssetPairInfo
+	PAXGUSD   AssetPairInfo
+	PAXGXBT   AssetPairInfo
+	QTUMETH   AssetPairInfo
+	QTUMEUR   AssetPairInfo
+	QTUMUSD   AssetPairInfo
+	QTUMXBT   AssetPairInfo
+	REPV2ETH  AssetPairInfo
+	REPV2EUR  AssetPairInfo
+	REPV2USD  AssetPairInfo
+	REPV2XBT  AssetPairInfo
+	SCETH     AssetPairInfo
+	SCEUR     AssetPairInfo
+	SCUSD     AssetPairInfo
+	SCXBT     AssetPairInfo
+	SNXAUD    AssetPairInfo
+	SNXETH    AssetPairInfo
+	SNXEUR    AssetPairInfo
+	SNXGBP    AssetPairInfo
+	SNXUSD    AssetPairInfo
+	SNXXBT    AssetPairInfo
+	STORJETH  AssetPairInfo
+	STORJEUR  AssetPairInfo
+	STORJUSD  AssetPairInfo
+	STORJXBT  AssetPairInfo
+	TBTCETH   AssetPairInfo
+	TBTCEUR   AssetPairInfo
+	TBTCUSD   AssetPairInfo
+	TBTCXBT   AssetPairInfo
+	TRXETH    AssetPairInfo
+	TRXEUR    AssetPairInfo
+	TRXUSD    AssetPairInfo
+	TRXXBT    AssetPairInfo
+	UNIETH    AssetPairInfo
+	UNIEUR    AssetPairInfo
+	UNIUSD    AssetPairInfo
+	UNIXBT    AssetPairInfo
+	USDCAUD   AssetPairInfo
+	USDCEUR   AssetPairInfo
+	USDCGBP   AssetPairInfo
+	USDCHF    AssetPairInfo
+	USDCUSD   AssetPairInfo
+	USDCUSDT  AssetPairInfo
+	USDTAUD   AssetPairInfo
+	USDTCAD   AssetPairInfo
+	USDTCHF   AssetPairInfo
+	USDTEUR   AssetPairInfo
+	USDTGBP   AssetPairInfo
+	USDTJPY   AssetPairInfo
+	USDTZUSD  AssetPairInfo
+	WAVESETH  AssetPairInfo
+	WAVESEUR  AssetPairInfo
+	WAVESUSD  AssetPairInfo
+	WAVESXBT  AssetPairInfo
+	XBTAUD    AssetPairInfo
+	XBTCHF    AssetPairInfo
+	XBTDAI    AssetPairInfo
+	XBTUSDC   AssetPairInfo
+	XBTUSDT   AssetPairInfo
+	XDGEUR    AssetPairInfo
+	XDGUSD    AssetPairInfo
+	XETCXETH  AssetPairInfo
+	XETCXXBT  AssetPairInfo
+	XETCZEUR  AssetPairInfo
+	XETCZUSD  AssetPairInfo
+	XETHXXBT  AssetPairInfo
+	XETHXXBTD AssetPairInfo
+	XETHZCAD  AssetPairInfo
+	XETHZCADD AssetPairInfo
+	XETHZEUR  AssetPairInfo
+	XETHZEURD AssetPairInfo
+	XETHZGBP  AssetPairInfo
+	XETHZGBPD AssetPairInfo
+	XETHZJPY  AssetPairInfo
+	XETHZJPYD AssetPairInfo
+	XETHZUSD  AssetPairInfo
+	XETHZUSDD AssetPairInfo
+	XLTCXXBT  AssetPairInfo
+	XLTCZEUR  AssetPairInfo
+	XLTCZJPY  AssetPairInfo
+	XLTCZUSD  AssetPairInfo
+	XMLNXETH  AssetPairInfo
+	XMLNXXBT  AssetPairInfo
+	XMLNZEUR  AssetPairInfo
+	XMLNZUSD  AssetPairInfo
+	XREPXETH  AssetPairInfo
+	XREPXXBT  AssetPairInfo
+	XREPZEUR  AssetPairInfo
+	XREPZUSD  AssetPairInfo
+	XRPAUD    AssetPairInfo
+	XRPETH    AssetPairInfo
+	XRPGBP    AssetPairInfo
+	XRPUSDT   AssetPairInfo
+	XTZAUD    AssetPairInfo
+	XTZETH    AssetPairInfo
+	XTZEUR    AssetPairInfo
+	XTZGBP    AssetPairInfo
+	XTZUSD    AssetPairInfo
+	XTZXBT    AssetPairInfo
+	XXBTZCAD  AssetPairInfo
+	XXBTZCADD AssetPairInfo
+	XXBTZEUR  AssetPairInfo
+	XXBTZEURD AssetPairInfo
+	XXBTZGBP  AssetPairInfo
+	XXBTZGBPD AssetPairInfo
+	XXBTZJPY  AssetPairInfo
+	XXBTZJPYD AssetPairInfo
+	XXBTZUSD  AssetPairInfo
+	XXBTZUSDD AssetPairInfo
+	XXDGXXBT  AssetPairInfo
+	XXLMXXBT  AssetPairInfo
+	XXLMZAUD  AssetPairInfo
+	XXLMZEUR  AssetPairInfo
+	XXLMZGBP  AssetPairInfo
+	XXLMZUSD  AssetPairInfo
+	XXMRXXBT  AssetPairInfo
+	XXMRZEUR  AssetPairInfo
+	XXMRZUSD  AssetPairInfo
+	XXRPXXBT  AssetPairInfo
+	XXRPZCAD  AssetPairInfo
+	XXRPZEUR  AssetPairInfo
+	XXRPZJPY  AssetPairInfo
+	XXRPZUSD  AssetPairInfo
+	XZECXXBT  AssetPairInfo
+	XZECZEUR  AssetPairInfo
+	XZECZUSD  AssetPairInfo
+	YFIAUD    AssetPairInfo
+	YFIETH    AssetPairInfo
+	YFIEUR    AssetPairInfo
+	YFIGBP    AssetPairInfo
+	YFIUSD    AssetPairInfo
+	YFIXBT    AssetPairInfo
+	ZEURZUSD  AssetPairInfo
+	ZGBPZUSD  AssetPairInfo
+	ZUSDZCAD  AssetPairInfo
+	ZUSDZJPY  AssetPairInfo
 }
 
 // AssetPairInfo represents asset pair information
 type AssetPairInfo struct {
 	// Alternate pair name
 	Altname string `json:"altname"`
+	//WebSocket pair name (if available)
+	WebSocketPairName string `json:"wsname"`
 	// Asset class of base component
 	AssetClassBase string `json:"aclass_base"`
 	// Asset id of base component
@@ -271,38 +732,85 @@ type AssetInfo struct {
 
 // BalanceResponse represents the account's balances (list of currencies)
 type BalanceResponse struct {
-	ADA  float64 `json:"ADA,string"`
-	AAVE float64 `json:"AAVE,string"`
-	BCH  float64 `json:"BCH,string"`
-	DASH float64 `json:"DASH,string"`
-	EOS  float64 `json:"EOS,string"`
-	GNO  float64 `json:"GNO,string"`
-	QTUM float64 `json:"QTUM,string"`
-	KFEE float64 `json:"KFEE,string"`
-	USDT float64 `json:"USDT,string"`
-	XDAO float64 `json:"XDAO,string"`
-	XETC float64 `json:"XETC,string"`
-	XETH float64 `json:"XETH,string"`
-	XICN float64 `json:"XICN,string"`
-	XLTC float64 `json:"XLTC,string"`
-	XMLN float64 `json:"XMLN,string"`
-	XNMC float64 `json:"XNMC,string"`
-	XREP float64 `json:"XREP,string"`
-	XXBT float64 `json:"XXBT,string"`
-	XXDG float64 `json:"XXDG,string"`
-	XXLM float64 `json:"XXLM,string"`
-	XXMR float64 `json:"XXMR,string"`
-	XXRP float64 `json:"XXRP,string"`
-	XTZ  float64 `json:"XTZ,string"`
-	XXVN float64 `json:"XXVN,string"`
-	XZEC float64 `json:"XZEC,string"`
-	ZCAD float64 `json:"ZCAD,string"`
-	ZEUR float64 `json:"ZEUR,string"`
-	ZGBP float64 `json:"ZGBP,string"`
-	ZJPY float64 `json:"ZJPY,string"`
-	ZKRW float64 `json:"ZKRW,string"`
-	ZUSD float64 `json:"ZUSD,string"`
-	TRX  float64 `json:"TRX,string"`
+	AAVE          float64 `json:"AAVE,string,omitempty"`
+	ADA           float64 `json:"ADA,string,omitempty"`
+	ALGO          float64 `json:"ALGO,string,omitempty"`
+	ANT           float64 `json:"ANT,string,omitempty"`
+	ATOM          float64 `json:"ATOM,string,omitempty"`
+	ATOM_STAKING  float64 `json:"ATOM.S,string,omitempty"`
+	BAL           float64 `json:"BAL,string,omitempty"`
+	BAT           float64 `json:"BAT,string,omitempty"`
+	BCH           float64 `json:"BCH,string,omitempty"`
+	CHF           float64 `json:"CHF,string,omitempty"`
+	COMP          float64 `json:"COMP,string,omitempty"`
+	CRV           float64 `json:"CRV,string,omitempty"`
+	DAI           float64 `json:"DAI,string,omitempty"`
+	DASH          float64 `json:"DASH,string,omitempty"`
+	DOT           float64 `json:"DOT,string,omitempty"`
+	DOT_STAKING   float64 `json:"DOT.S,string,omitempty"`
+	EOS           float64 `json:"EOS,string,omitempty"`
+	ETH2          float64 `json:"ETH2,string,omitempty"`
+	ETH2_STAKING  float64 `json:"ETH2.S,string,omitempty"`
+	EUR_HOLD      float64 `json:"EUR.HOLD,string,omitempty"`
+	EUR_M         float64 `json:"EUR.M,string,omitempty"`
+	EWT           float64 `json:"EWT,string,omitempty"`
+	FIL           float64 `json:"FIL,string,omitempty"`
+	FLOW          float64 `json:"FLOW,string,omitempty"`
+	FLOW_STAKING  float64 `json:"FLOW.S,string,omitempty"`
+	FLOWH         float64 `json:"FLOWH,string,omitempty"`
+	FLOWH_STAKING float64 `json:"FLOWH.S,string,omitempty"`
+	GNO           float64 `json:"GNO,string,omitempty"`
+	GRT           float64 `json:"GRT,string,omitempty"`
+	ICX           float64 `json:"ICX,string,omitempty"`
+	KAVA          float64 `json:"KAVA,string,omitempty"`
+	KAVA_STAKING  float64 `json:"KAVA.S,string,omitempty"`
+	KEEP          float64 `json:"KEEP,string,omitempty"`
+	FEE           float64 `json:"KFEE,string,omitempty"`
+	KNC           float64 `json:"KNC,string,omitempty"`
+	KSM           float64 `json:"KSM,string,omitempty"`
+	KSM_STAKING   float64 `json:"KSM.S,string,omitempty"`
+	LINK          float64 `json:"LINK,string,omitempty"`
+	LSK           float64 `json:"LSK,string,omitempty"`
+	MANA          float64 `json:"MANA,string,omitempty"`
+	NANO          float64 `json:"NANO,string,omitempty"`
+	OCEAN         float64 `json:"OCEAN,string,omitempty"`
+	OMG           float64 `json:"OMG,string,omitempty"`
+	OXT           float64 `json:"OXT,string,omitempty"`
+	PAXG          float64 `json:"PAXG,string,omitempty"`
+	QTUM          float64 `json:"QTUM,string,omitempty"`
+	REPV2         float64 `json:"REPV2,string,omitempty"`
+	SC            float64 `json:"SC,string,omitempty"`
+	SNX           float64 `json:"SNX,string,omitempty"`
+	STORJ         float64 `json:"STORJ,string,omitempty"`
+	TBTC          float64 `json:"TBTC,string,omitempty"`
+	TRX           float64 `json:"TRX,string,omitempty"`
+	UNI           float64 `json:"UNI,string,omitempty"`
+	USD_HOLD      float64 `json:"USD.HOLD,string,omitempty"`
+	USD_M         float64 `json:"USD.M,string,omitempty"`
+	USDC          float64 `json:"USDC,string,omitempty"`
+	USDT          float64 `json:"USDT,string,omitempty"`
+	WAVES         float64 `json:"WAVES,string,omitempty"`
+	XBT_M         float64 `json:"XBT.M,string,omitempty"`
+	ETC           float64 `json:"XETC,string,omitempty"`
+	ETH           float64 `json:"XETH,string,omitempty"`
+	LTC           float64 `json:"XLTC,string,omitempty"`
+	MLN           float64 `json:"XMLN,string,omitempty"`
+	REP           float64 `json:"XREP,string,omitempty"`
+	XTZ           float64 `json:"XTZ,string,omitempty"`
+	XTZ_STAKING   float64 `json:"XTZ.S,string,omitempty"`
+	XBT           float64 `json:"XXBT,string,omitempty"`
+	XDG           float64 `json:"XXDG,string,omitempty"`
+	XLM           float64 `json:"XXLM,string,omitempty"`
+	XMR           float64 `json:"XXMR,string,omitempty"`
+	XRP           float64 `json:"XXRP,string,omitempty"`
+	ZEC           float64 `json:"XZEC,string,omitempty"`
+	YFI           float64 `json:"YFI,string,omitempty"`
+	AUD           float64 `json:"ZAUD,string,omitempty"`
+	CAD           float64 `json:"ZCAD,string,omitempty"`
+	EUR           float64 `json:"ZEUR,string,omitempty"`
+	GBP           float64 `json:"ZGBP,string,omitempty"`
+	JPY           float64 `json:"ZJPY,string,omitempty"`
+	USD           float64 `json:"ZUSD,string,omitempty"`
 }
 
 // TradeBalanceResponse struct used as the response for the TradeBalance method
@@ -414,79 +922,309 @@ type TradeVolumeResponse struct {
 
 // TickerResponse includes the requested ticker pairs
 type TickerResponse struct {
-	ADACAD   PairTickerInfo
-	ADAETH   PairTickerInfo
-	ADAEUR   PairTickerInfo
-	ADAUSD   PairTickerInfo
-	ADAXBT   PairTickerInfo
-	AAVEUSD  PairTickerInfo
-	BCHEUR   PairTickerInfo
-	BCHUSD   PairTickerInfo
-	BCHXBT   PairTickerInfo
-	DASHEUR  PairTickerInfo
-	DASHUSD  PairTickerInfo
-	DASHXBT  PairTickerInfo
-	EOSETH   PairTickerInfo
-	EOSEUR   PairTickerInfo
-	EOSUSD   PairTickerInfo
-	EOSXBT   PairTickerInfo
-	GNOETH   PairTickerInfo
-	GNOEUR   PairTickerInfo
-	GNOUSD   PairTickerInfo
-	GNOXBT   PairTickerInfo
-	QTUMCAD  PairTickerInfo
-	QTUMETH  PairTickerInfo
-	QTUMEUR  PairTickerInfo
-	QTUMUSD  PairTickerInfo
-	QTUMXBT  PairTickerInfo
-	USDTZUSD PairTickerInfo
-	XBTUSDT  PairTickerInfo
-	XETCXETH PairTickerInfo
-	XETCXXBT PairTickerInfo
-	XETCZEUR PairTickerInfo
-	XETCZUSD PairTickerInfo
-	XETHXXBT PairTickerInfo
-	XETHZCAD PairTickerInfo
-	XETHZEUR PairTickerInfo
-	XETHZGBP PairTickerInfo
-	XETHZJPY PairTickerInfo
-	XETHZUSD PairTickerInfo
-	XICNXETH PairTickerInfo
-	XICNXXBT PairTickerInfo
-	XLTCXXBT PairTickerInfo
-	XLTCZEUR PairTickerInfo
-	XLTCZUSD PairTickerInfo
-	XMLNXETH PairTickerInfo
-	XMLNXXBT PairTickerInfo
-	XREPXETH PairTickerInfo
-	XREPXXBT PairTickerInfo
-	XREPZEUR PairTickerInfo
-	XREPZUSD PairTickerInfo
-	XXBTZCAD PairTickerInfo
-	XXBTZEUR PairTickerInfo
-	XXBTZGBP PairTickerInfo
-	XXBTZJPY PairTickerInfo
-	XXBTZUSD PairTickerInfo
-	XXDGXXBT PairTickerInfo
-	XXLMXXBT PairTickerInfo
-	XXLMZEUR PairTickerInfo
-	XXLMZUSD PairTickerInfo
-	XXMRXXBT PairTickerInfo
-	XXMRZEUR PairTickerInfo
-	XXMRZUSD PairTickerInfo
-	XXRPXXBT PairTickerInfo
-	XXRPZCAD PairTickerInfo
-	XXRPZEUR PairTickerInfo
-	XXRPZJPY PairTickerInfo
-	XXRPZUSD PairTickerInfo
-	XTZCAD   PairTickerInfo
-	XTZETH   PairTickerInfo
-	XTZEUR   PairTickerInfo
-	XTZUSD   PairTickerInfo
-	XTZXBT   PairTickerInfo
-	XZECXXBT PairTickerInfo
-	XZECZEUR PairTickerInfo
-	XZECZUSD PairTickerInfo
+	ADACAD    PairTickerInfo
+	AAVEAUD   PairTickerInfo
+	AAVEETH   PairTickerInfo
+	AAVEEUR   PairTickerInfo
+	AAVEGBP   PairTickerInfo
+	AAVEUSD   PairTickerInfo
+	AAVEXBT   PairTickerInfo
+	ADAAUD    PairTickerInfo
+	ADAETH    PairTickerInfo
+	ADAEUR    PairTickerInfo
+	ADAGBP    PairTickerInfo
+	ADAUSD    PairTickerInfo
+	ADAUSDT   PairTickerInfo
+	ADAXBT    PairTickerInfo
+	ALGOETH   PairTickerInfo
+	ALGOEUR   PairTickerInfo
+	ALGOGBP   PairTickerInfo
+	ALGOUSD   PairTickerInfo
+	ALGOXBT   PairTickerInfo
+	ANTETH    PairTickerInfo
+	ANTEUR    PairTickerInfo
+	ANTUSD    PairTickerInfo
+	ANTXBT    PairTickerInfo
+	ATOMAUD   PairTickerInfo
+	ATOMETH   PairTickerInfo
+	ATOMEUR   PairTickerInfo
+	ATOMGBP   PairTickerInfo
+	ATOMUSD   PairTickerInfo
+	ATOMXBT   PairTickerInfo
+	AUDJPY    PairTickerInfo
+	AUDUSD    PairTickerInfo
+	BALETH    PairTickerInfo
+	BALEUR    PairTickerInfo
+	BALUSD    PairTickerInfo
+	BALXBT    PairTickerInfo
+	BATETH    PairTickerInfo
+	BATEUR    PairTickerInfo
+	BATUSD    PairTickerInfo
+	BATXBT    PairTickerInfo
+	BCHAUD    PairTickerInfo
+	BCHETH    PairTickerInfo
+	BCHEUR    PairTickerInfo
+	BCHGBP    PairTickerInfo
+	BCHJPY    PairTickerInfo
+	BCHUSD    PairTickerInfo
+	BCHUSDT   PairTickerInfo
+	BCHXBT    PairTickerInfo
+	COMPETH   PairTickerInfo
+	COMPEUR   PairTickerInfo
+	COMPUSD   PairTickerInfo
+	COMPXBT   PairTickerInfo
+	CRVETH    PairTickerInfo
+	CRVEUR    PairTickerInfo
+	CRVUSD    PairTickerInfo
+	CRVXBT    PairTickerInfo
+	DAIEUR    PairTickerInfo
+	DAIUSD    PairTickerInfo
+	DAIUSDT   PairTickerInfo
+	DASHEUR   PairTickerInfo
+	DASHUSD   PairTickerInfo
+	DASHXBT   PairTickerInfo
+	DOTAUD    PairTickerInfo
+	DOTETH    PairTickerInfo
+	DOTEUR    PairTickerInfo
+	DOTGBP    PairTickerInfo
+	DOTUSD    PairTickerInfo
+	DOTUSDT   PairTickerInfo
+	DOTXBT    PairTickerInfo
+	EOSETH    PairTickerInfo
+	EOSEUR    PairTickerInfo
+	EOSUSD    PairTickerInfo
+	EOSUSDT   PairTickerInfo
+	EOSXBT    PairTickerInfo
+	ETH2SETH  PairTickerInfo
+	ETHAUD    PairTickerInfo
+	ETHCHF    PairTickerInfo
+	ETHDAI    PairTickerInfo
+	ETHUSDC   PairTickerInfo
+	ETHUSDT   PairTickerInfo
+	EURAUD    PairTickerInfo
+	EURCAD    PairTickerInfo
+	EURCHF    PairTickerInfo
+	EURGBP    PairTickerInfo
+	EURJPY    PairTickerInfo
+	EWTEUR    PairTickerInfo
+	EWTGBP    PairTickerInfo
+	EWTUSD    PairTickerInfo
+	EWTXBT    PairTickerInfo
+	FILAUD    PairTickerInfo
+	FILETH    PairTickerInfo
+	FILEUR    PairTickerInfo
+	FILGBP    PairTickerInfo
+	FILUSD    PairTickerInfo
+	FILXBT    PairTickerInfo
+	FLOWETH   PairTickerInfo
+	FLOWEUR   PairTickerInfo
+	FLOWGBP   PairTickerInfo
+	FLOWUSD   PairTickerInfo
+	FLOWXBT   PairTickerInfo
+	GNOETH    PairTickerInfo
+	GNOEUR    PairTickerInfo
+	GNOUSD    PairTickerInfo
+	GNOXBT    PairTickerInfo
+	GRTAUD    PairTickerInfo
+	GRTETH    PairTickerInfo
+	GRTEUR    PairTickerInfo
+	GRTGBP    PairTickerInfo
+	GRTUSD    PairTickerInfo
+	GRTXBT    PairTickerInfo
+	ICXETH    PairTickerInfo
+	ICXEUR    PairTickerInfo
+	ICXUSD    PairTickerInfo
+	ICXXBT    PairTickerInfo
+	KAVAETH   PairTickerInfo
+	KAVAEUR   PairTickerInfo
+	KAVAUSD   PairTickerInfo
+	KAVAXBT   PairTickerInfo
+	KEEPETH   PairTickerInfo
+	KEEPEUR   PairTickerInfo
+	KEEPUSD   PairTickerInfo
+	KEEPXBT   PairTickerInfo
+	KNCETH    PairTickerInfo
+	KNCEUR    PairTickerInfo
+	KNCUSD    PairTickerInfo
+	KNCXBT    PairTickerInfo
+	KSMAUD    PairTickerInfo
+	KSMETH    PairTickerInfo
+	KSMEUR    PairTickerInfo
+	KSMGBP    PairTickerInfo
+	KSMUSD    PairTickerInfo
+	KSMXBT    PairTickerInfo
+	LINKAUD   PairTickerInfo
+	LINKETH   PairTickerInfo
+	LINKEUR   PairTickerInfo
+	LINKGBP   PairTickerInfo
+	LINKUSD   PairTickerInfo
+	LINKUSDT  PairTickerInfo
+	LINKXBT   PairTickerInfo
+	LSKETH    PairTickerInfo
+	LSKEUR    PairTickerInfo
+	LSKUSD    PairTickerInfo
+	LSKXBT    PairTickerInfo
+	LTCAUD    PairTickerInfo
+	LTCETH    PairTickerInfo
+	LTCGBP    PairTickerInfo
+	LTCUSDT   PairTickerInfo
+	MANAETH   PairTickerInfo
+	MANAEUR   PairTickerInfo
+	MANAUSD   PairTickerInfo
+	MANAXBT   PairTickerInfo
+	NANOETH   PairTickerInfo
+	NANOEUR   PairTickerInfo
+	NANOUSD   PairTickerInfo
+	NANOXBT   PairTickerInfo
+	OCEANEUR  PairTickerInfo
+	OCEANGBP  PairTickerInfo
+	OCEANUSD  PairTickerInfo
+	OCEANXBT  PairTickerInfo
+	OMGETH    PairTickerInfo
+	OMGEUR    PairTickerInfo
+	OMGUSD    PairTickerInfo
+	OMGXBT    PairTickerInfo
+	OXTETH    PairTickerInfo
+	OXTEUR    PairTickerInfo
+	OXTUSD    PairTickerInfo
+	OXTXBT    PairTickerInfo
+	PAXGETH   PairTickerInfo
+	PAXGEUR   PairTickerInfo
+	PAXGUSD   PairTickerInfo
+	PAXGXBT   PairTickerInfo
+	QTUMETH   PairTickerInfo
+	QTUMEUR   PairTickerInfo
+	QTUMUSD   PairTickerInfo
+	QTUMXBT   PairTickerInfo
+	REPV2ETH  PairTickerInfo
+	REPV2EUR  PairTickerInfo
+	REPV2USD  PairTickerInfo
+	REPV2XBT  PairTickerInfo
+	SCETH     PairTickerInfo
+	SCEUR     PairTickerInfo
+	SCUSD     PairTickerInfo
+	SCXBT     PairTickerInfo
+	SNXAUD    PairTickerInfo
+	SNXETH    PairTickerInfo
+	SNXEUR    PairTickerInfo
+	SNXGBP    PairTickerInfo
+	SNXUSD    PairTickerInfo
+	SNXXBT    PairTickerInfo
+	STORJETH  PairTickerInfo
+	STORJEUR  PairTickerInfo
+	STORJUSD  PairTickerInfo
+	STORJXBT  PairTickerInfo
+	TBTCETH   PairTickerInfo
+	TBTCEUR   PairTickerInfo
+	TBTCUSD   PairTickerInfo
+	TBTCXBT   PairTickerInfo
+	TRXETH    PairTickerInfo
+	TRXEUR    PairTickerInfo
+	TRXUSD    PairTickerInfo
+	TRXXBT    PairTickerInfo
+	UNIETH    PairTickerInfo
+	UNIEUR    PairTickerInfo
+	UNIUSD    PairTickerInfo
+	UNIXBT    PairTickerInfo
+	USDCAUD   PairTickerInfo
+	USDCEUR   PairTickerInfo
+	USDCGBP   PairTickerInfo
+	USDCHF    PairTickerInfo
+	USDCUSD   PairTickerInfo
+	USDCUSDT  PairTickerInfo
+	USDTAUD   PairTickerInfo
+	USDTCAD   PairTickerInfo
+	USDTCHF   PairTickerInfo
+	USDTEUR   PairTickerInfo
+	USDTGBP   PairTickerInfo
+	USDTJPY   PairTickerInfo
+	USDTZUSD  PairTickerInfo
+	WAVESETH  PairTickerInfo
+	WAVESEUR  PairTickerInfo
+	WAVESUSD  PairTickerInfo
+	WAVESXBT  PairTickerInfo
+	XBTAUD    PairTickerInfo
+	XBTCHF    PairTickerInfo
+	XBTDAI    PairTickerInfo
+	XBTUSDC   PairTickerInfo
+	XBTUSDT   PairTickerInfo
+	XDGEUR    PairTickerInfo
+	XDGUSD    PairTickerInfo
+	XETCXETH  PairTickerInfo
+	XETCXXBT  PairTickerInfo
+	XETCZEUR  PairTickerInfo
+	XETCZUSD  PairTickerInfo
+	XETHXXBT  PairTickerInfo
+	XETHXXBTD PairTickerInfo
+	XETHZCAD  PairTickerInfo
+	XETHZCADD PairTickerInfo
+	XETHZEUR  PairTickerInfo
+	XETHZEURD PairTickerInfo
+	XETHZGBP  PairTickerInfo
+	XETHZGBPD PairTickerInfo
+	XETHZJPY  PairTickerInfo
+	XETHZJPYD PairTickerInfo
+	XETHZUSD  PairTickerInfo
+	XETHZUSDD PairTickerInfo
+	XLTCXXBT  PairTickerInfo
+	XLTCZEUR  PairTickerInfo
+	XLTCZJPY  PairTickerInfo
+	XLTCZUSD  PairTickerInfo
+	XMLNXETH  PairTickerInfo
+	XMLNXXBT  PairTickerInfo
+	XMLNZEUR  PairTickerInfo
+	XMLNZUSD  PairTickerInfo
+	XREPXETH  PairTickerInfo
+	XREPXXBT  PairTickerInfo
+	XREPZEUR  PairTickerInfo
+	XREPZUSD  PairTickerInfo
+	XRPAUD    PairTickerInfo
+	XRPETH    PairTickerInfo
+	XRPGBP    PairTickerInfo
+	XRPUSDT   PairTickerInfo
+	XTZAUD    PairTickerInfo
+	XTZETH    PairTickerInfo
+	XTZEUR    PairTickerInfo
+	XTZGBP    PairTickerInfo
+	XTZUSD    PairTickerInfo
+	XTZXBT    PairTickerInfo
+	XXBTZCAD  PairTickerInfo
+	XXBTZCADD PairTickerInfo
+	XXBTZEUR  PairTickerInfo
+	XXBTZEURD PairTickerInfo
+	XXBTZGBP  PairTickerInfo
+	XXBTZGBPD PairTickerInfo
+	XXBTZJPY  PairTickerInfo
+	XXBTZJPYD PairTickerInfo
+	XXBTZUSD  PairTickerInfo
+	XXBTZUSDD PairTickerInfo
+	XXDGXXBT  PairTickerInfo
+	XXLMXXBT  PairTickerInfo
+	XXLMZAUD  PairTickerInfo
+	XXLMZEUR  PairTickerInfo
+	XXLMZGBP  PairTickerInfo
+	XXLMZUSD  PairTickerInfo
+	XXMRXXBT  PairTickerInfo
+	XXMRZEUR  PairTickerInfo
+	XXMRZUSD  PairTickerInfo
+	XXRPXXBT  PairTickerInfo
+	XXRPZCAD  PairTickerInfo
+	XXRPZEUR  PairTickerInfo
+	XXRPZJPY  PairTickerInfo
+	XXRPZUSD  PairTickerInfo
+	XZECXXBT  PairTickerInfo
+	XZECZEUR  PairTickerInfo
+	XZECZUSD  PairTickerInfo
+	YFIAUD    PairTickerInfo
+	YFIETH    PairTickerInfo
+	YFIEUR    PairTickerInfo
+	YFIGBP    PairTickerInfo
+	YFIUSD    PairTickerInfo
+	YFIXBT    PairTickerInfo
+	ZEURZUSD  PairTickerInfo
+	ZGBPZUSD  PairTickerInfo
+	ZUSDZCAD  PairTickerInfo
+	ZUSDZJPY  PairTickerInfo
 }
 
 // DepositAddressesResponse is the response type of a DepositAddresses query to the Kraken API.

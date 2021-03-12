@@ -71,25 +71,65 @@ var privateMethods = []string{
 }
 
 // These represent the minimum order sizes for the respective coins
-// Should be monitored through here: https://support.kraken.com/hc/en-us/articles/205893708-What-is-the-minimum-order-size-
+// Should be monitored through here: https://support.kraken.com/hc/en-us/articles/205893708-Minimum-order-size-volume-for-trading
 const (
-	MinimumREP  = 0.3
-	MinimumXBT  = 0.002
-	MinimumBCH  = 0.002
-	MinimumDASH = 0.03
-	MinimumDOGE = 3000.0
-	MinimumEOS  = 3.0
-	MinimumETH  = 0.02
-	MinimumETC  = 0.3
-	MinimumGNO  = 0.03
-	MinimumICN  = 2.0
-	MinimumLTC  = 0.1
-	MinimumMLN  = 0.1
-	MinimumXMR  = 0.1
-	MinimumXRP  = 30.0
-	MinimumXLM  = 300.0
-	MinimumZEC  = 0.02
-	MinimumUSDT = 5.0
+	MinimumAAVE  = 0.05
+	MinimumADA   = 25
+	MinimumALGO  = 15
+	MinimumANT   = 2
+	MinimumATOM  = 1
+	MinimumBAL   = 0.3
+	MinimumBAT   = 30
+	MinimumBCH   = 0.02
+	MinimumCOMP  = 0.05
+	MinimumCRV   = 10
+	MinimumDAI   = 5
+	MinimumDASH  = 0.05
+	MinimumDOT   = 0.5
+	MinimumEOS   = 2.5
+	MinimumETC   = 1
+	MinimumETH   = 0.005
+	MinimumETH2  = 0.02
+	MinimumEWT   = 1
+	MinimumFIL   = 0.3
+	MinimumFLOW  = 1
+	MinimumGNO   = 0.05
+	MinimumGRT   = 20
+	MinimumICX   = 10
+	MinimumKAVA  = 5
+	MinimumKEEP  = 25
+	MinimumKNC   = 5
+	MinimumKSM   = 0.1
+	MinimumLINK  = 0.5
+	MinimumLSK   = 5
+	MinimumLTC   = 0.05
+	MinimumMANA  = 50
+	MinimumMLN   = 0.2
+	MinimumNANO  = 2
+	MinimumOCEAN = 10
+	MinimumOMG   = 2
+	MinimumOXT   = 25
+	MinimumPAXG  = 0.004
+	MinimumQTUM  = 2.5
+	MinimumREP   = 0.3
+	MinimumREPV2 = 0.3
+	MinimumSC    = 1500
+	MinimumSNX   = 0.5
+	MinimumSTORJ = 20
+	MinimumTBTC  = 0.0002
+	MinimumTRX   = 250
+	MinimumUNI   = 1
+	MinimumUSDC  = 5
+	MinimumUSDT  = 5
+	MinimumWAVES = 2
+	MinimumXBT   = 0.0002
+	MinimumXDG   = 50
+	MinimumXLM   = 20
+	MinimumXMR   = 0.05
+	MinimumXRP   = 20
+	MinimumXTZ   = 3
+	MinimumYFI   = 0.0002
+	MinimumZEC   = 0.1
 )
 
 // KrakenApi represents a Kraken API Client connection
