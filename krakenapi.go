@@ -614,13 +614,13 @@ func (api *KrakenAPI) Query(method string, data map[string]string) (interface{},
 		return api.queryPrivate(method, values, nil)
 	}
 
-	return nil, fmt.Errorf("Method '%s' is not valid", method)
+	return nil, fmt.Errorf("method '%s' is not valid", method)
 }
 
 // Execute a public method query
 func (api *KrakenAPI) queryPublic(method string, values url.Values, typ interface{}) (interface{}, error) {
-	url := fmt.Sprintf("%s/%s/public/%s", APIURL, APIVersion, method)
-	resp, err := api.doRequest(url, values, nil, typ)
+	reqUrl := fmt.Sprintf("%s/%s/public/%s", APIURL, APIVersion, method)
+	resp, err := api.doRequest(reqUrl, values, nil, typ)
 
 	return resp, err
 }
@@ -652,7 +652,7 @@ func (api *KrakenAPI) doRequest(reqURL string, values url.Values, headers map[st
 	// Create request
 	req, err := http.NewRequest("POST", reqURL, strings.NewReader(values.Encode()))
 	if err != nil {
-		return nil, fmt.Errorf("Could not execute request! #1 (%s)", err.Error())
+		return nil, fmt.Errorf("could not execute request! #1 (%s)", err.Error())
 	}
 
 	req.Header.Add("User-Agent", APIUserAgent)
@@ -663,23 +663,23 @@ func (api *KrakenAPI) doRequest(reqURL string, values url.Values, headers map[st
 	// Execute request
 	resp, err := api.client.Do(req)
 	if err != nil {
-		return nil, fmt.Errorf("Could not execute request! #2 (%s)", err.Error())
+		return nil, fmt.Errorf("could not execute request! #2 (%s)", err.Error())
 	}
 	defer resp.Body.Close()
 
 	// Read request
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, fmt.Errorf("Could not execute request! #3 (%s)", err.Error())
+		return nil, fmt.Errorf("could not execute request! #3 (%s)", err.Error())
 	}
 
 	// Check mime type of response
 	mimeType, _, err := mime.ParseMediaType(resp.Header.Get("Content-Type"))
 	if err != nil {
-		return nil, fmt.Errorf("Could not execute request #4! (%s)", err.Error())
+		return nil, fmt.Errorf("could not execute request #4! (%s)", err.Error())
 	}
 	if mimeType != "application/json" {
-		return nil, fmt.Errorf("Could not execute request #5! (%s)", fmt.Sprintf("Response Content-Type is '%s', but should be 'application/json'.", mimeType))
+		return nil, fmt.Errorf("could not execute request #5! (%s)", fmt.Sprintf("Response Content-Type is '%s', but should be 'application/json'.", mimeType))
 	}
 
 	// Parse request
@@ -693,12 +693,12 @@ func (api *KrakenAPI) doRequest(reqURL string, values url.Values, headers map[st
 
 	err = json.Unmarshal(body, &jsonData)
 	if err != nil {
-		return nil, fmt.Errorf("Could not execute request! #6 (%s)", err.Error())
+		return nil, fmt.Errorf("could not execute request! #6 (%s)", err.Error())
 	}
 
 	// Check for Kraken API error
 	if len(jsonData.Error) > 0 {
-		return nil, fmt.Errorf("Could not execute request! #7 (%s)", jsonData.Error)
+		return nil, fmt.Errorf("could not execute request! #7 (%s)", jsonData.Error)
 	}
 
 	return jsonData.Result, nil
