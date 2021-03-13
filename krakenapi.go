@@ -533,7 +533,7 @@ func (api *KrakenAPI) AddOrder(pair string, direction string, orderType string, 
 	return resp.(*AddOrderResponse), nil
 }
 
-// Ledgers returns ledgers informations
+// Ledgers returns ledgers information
 func (api *KrakenAPI) Ledgers(args map[string]string) (*LedgersResponse, error) {
 	params := url.Values{}
 	if value, ok := args["aclass"]; ok {

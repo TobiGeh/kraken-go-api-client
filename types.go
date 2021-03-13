@@ -337,7 +337,7 @@ type TimeResponse struct {
 	Rfc1123 string
 }
 
-// AssetPairsResponse includes asset pair informations
+// AssetPairsResponse includes asset pair information
 type AssetPairsResponse struct {
 	AAVEAUD   AssetPairInfo
 	AAVEETH   AssetPairInfo
@@ -1324,7 +1324,7 @@ type LedgersResponse struct {
 	Ledger map[string]LedgerInfo `json:"ledger"`
 }
 
-// LedgerInfo Represents the ledger informations
+// LedgerInfo Represents the ledger information
 type LedgerInfo struct {
 	RefID   string    `json:"refid"`
 	Time    float64   `json:"time"`
