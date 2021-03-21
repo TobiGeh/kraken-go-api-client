@@ -59,9 +59,14 @@ func TestAssetPairs(t *testing.T) {
 	if err != nil {
 		t.Errorf("AssetPairs() should not return an error, got %s", err)
 	}
+	info, ok := resp.GetAssetPairInfo(XXBTZEUR)
 
-	if resp.XXBTZEUR.Base+resp.XXBTZEUR.Quote != XXBTZEUR {
-		t.Errorf("AssetPairs() should return valid response, got %+v", resp.XXBTZEUR)
+	if !ok {
+		t.Error("Cannot find XXBTZEUR asset pair")
+	}
+
+	if info.Base+info.Quote != XXBTZEUR {
+		t.Errorf("AssetPairs() should return valid response, got %+v", info)
 	}
 }
 
@@ -71,8 +76,13 @@ func TestTicker(t *testing.T) {
 		t.Errorf("Ticker() should not return an error, got %s", err)
 	}
 
-	if resp.XXBTZEUR.OpeningPrice == 0 {
-		t.Errorf("Ticker() should return valid OpeningPrice, got %+v", resp.XXBTZEUR.OpeningPrice)
+	info, ok := resp.GetPairTickerInfo(XXBTZEUR)
+	if !ok {
+		t.Error("Cannot find XXBTZEUR ticker")
+	}
+
+	if info.OpeningPrice == 0 {
+		t.Errorf("Ticker() should return valid OpeningPrice, got %+v", info.OpeningPrice)
 	}
 }
 
