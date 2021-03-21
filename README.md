@@ -35,7 +35,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(ticker.XXBTZEUR.OpeningPrice)
+	info, ok := ticker.GetPairTickerInfo(krakenapi.XXBTZEUR)
+	if !ok {
+		log.Fatal("no XXBTZEUR ticker info")
+	}
+
+	fmt.Println(info.OpeningPrice)
 }
 ```
 
