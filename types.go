@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"math/big"
-	"reflect"
 	"strconv"
 	"time"
 )
@@ -456,11 +455,9 @@ type WithdrawInfoResponse struct {
 }
 
 // GetPairTickerInfo is a helper method that returns given `pair`'s `PairTickerInfo`
-func (v *TickerResponse) GetPairTickerInfo(pair string) PairTickerInfo {
-	r := reflect.ValueOf(v)
-	f := reflect.Indirect(r).FieldByName(pair)
-
-	return f.Interface().(PairTickerInfo)
+func (v *TickerResponse) GetPairTickerInfo(pair string) (PairTickerInfo, bool) {
+	info, ok := (*v)[pair]
+	return info, ok
 }
 
 // GetAssetPairInfo is a helper method that returns given `pair`'s `AssetPairInfo`
