@@ -395,7 +395,25 @@ type AssetInfo struct {
 }
 
 // BalanceResponse represents the account's balances (list of currencies)
+// TODO: replace float64 with more precise datatype
 type BalanceResponse map[string]float64
+
+func (balanceResponse *BalanceResponse) UnmarshalJSON(input []byte) error {
+	var tmp map[string]json.Number
+
+	if err := json.Unmarshal(input, &tmp); err != nil {
+		return err
+	}
+
+	for key, value := range tmp {
+		if result, err := value.Float64(); err != nil {
+			return err
+		} else if result != 0 {
+			(*balanceResponse)[key] = result
+		}
+	}
+	return nil
+}
 
 // TradeBalanceResponse struct used as the response for the TradeBalance method
 type TradeBalanceResponse struct {
