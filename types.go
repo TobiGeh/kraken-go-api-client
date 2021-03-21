@@ -343,7 +343,7 @@ type AssetPairsResponse map[string]AssetPairInfo
 type AssetPairInfo struct {
 	// Alternate pair name
 	Altname string `json:"altname"`
-	//WebSocket pair name (if available)
+	// WebSocket pair name (if available)
 	WebSocketPairName string `json:"wsname"`
 	// Asset class of base component
 	AssetClassBase string `json:"aclass_base"`
